@@ -1,0 +1,32 @@
+## Boilerplate options
+
+# Max resource options
+# Defaults only, expecting to be overwritten
+max_memory                 : '36.G'
+max_cpus                   : 14
+max_time                   : '240.h'
+
+outdir: 'testvcfcaller'
+
+input: "${projectDir}/assets/samplesheet.csv"
+fasta: "${projectDir}/assets/bovine_index/chr25/chr25.fa.gz"
+fasta1: "/home/bianca/biohackathon/assets/bovine_index/test/reference.fasta" 
+fai1:   "/home/bianca/biohackathon/assets/bovine_index/test/reference.fasta.fai" 
+testbam:   "/home/bianca/biohackathon/assets/bovine_index/test/sample.bam" 
+testbai:   "/home/bianca/biohackathon/assets/bovine_index/test/sample.bam.bai" 
+bwamem_index_provided : false
+bwamem_index : "/home/bianca/biohackathon/assets/bovine_index/chr25/chr25.fasta"  #cannot find the file
+bwamem_indexpath : "/home/bianca/biohackathon/assets/bovine_index/"
+#bwamem_index : null
+
+fastp_qualified_quality_phred : 15 
+fastp_unqualified_percent_limit : 40 
+fastp_trim_poly_g : true
+fastp_length_required : 30
+example_bam: "/home/bianca/biohackathon/assets/subset.bam"
+glnexusdir: "/home/bianca/deepvariant1/"
+
+#glnexusdir: "/home/bianca/deepvariant1/*.g.vcf.gz"
+bed: "${projectDir}/assets/bovine_index/test/reference.bed"
+glnexusconfig: "/home/bianca/biohackathon/assets/glnexusq.yml"
+

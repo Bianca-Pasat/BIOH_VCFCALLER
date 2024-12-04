@@ -1,0 +1,33 @@
+
+    #ANNOTATEVCF
+    input : "${projectDir}/assets/test_vcf.vcf"
+    exte    : "vcf"
+    vcfpass    : ""
+    vcfrecode  : "--recode"
+    vcf_recode_info_all : "--recode-INFO-all"
+    vcf_minall : ""
+    vcf_maxall : ""
+    vcf_gq : ""
+    vcf_dp : ""
+    snpeffdb: "s3://e-nios-bucket-1/data/VCF/snpeff/snpEff_v4_3_GRCh38.86.zip"
+    assembly: "GRCh38.86"
+    effect_expression: "(ANN[0].EFFECT = '5_prime_UTR_premature_start_codon_gain_variant') | (ANN[0].EFFECT = 'frameshift_variant') | (ANN[0].EFFECT = 'missense_variant') | (ANN[0].EFFECT = 'splice_acceptor_variant') | (ANN[0].EFFECT = 'splice_donor_variant') | (ANN[0].EFFECT = 'splice_region_variant') | (ANN[0].EFFECT = 'start_lost') | (ANN[0].EFFECT = 'stop_gained') | (ANN[0].EFFECT = 'stop_lost')"
+    keep_indels: "--keep-only-indels"
+    keep_snps: "--remove-indels"
+    snpsiftdb1: "s3://e-nios-bucket-1/data/VCF/snpsift/dbNSFP4.0b1a_hg38_complete.vcf.gz"
+    snpsiftdb1_index: "s3://e-nios-bucket-1/data/VCF/snpsift/dbNSFP4.0b1a_hg38_complete.vcf.gz.tbi"
+    snpsiftdb2: "s3://e-nios-bucket-1/data/VCF/snpsift/ExAC.r1.sites.vep.hg38.vcf.gz"
+    snpsiftdb2_index: "s3://e-nios-bucket-1/data/VCF/snpsift/ExAC.r1.sites.vep.hg38.vcf.gz.tbi"
+    cosmicdb: "s3://e-nios-bucket-1/data/VCF/snpsift/hg38_cosmic92_coding.vcf.gz"
+    cosmicdb_index: "s3://e-nios-bucket-1/data/VCF/snpsift/hg38_cosmic92_coding.vcf.gz.tbi"
+    snpsexpr: "(dbNSFP_1000Gp3_AF <= 0.01) & (dbNSFP_ExAC_AF <= 0.01) & (dbNSFP_gnomAD_exomes_AF <= 0.01)"
+    indelsexpr: "(KG_AF_GLOBAL <= 0.01) & (ESP_AF_GLOBAL <= 0.01) & (AF <= 0.01)"
+    #outdir : "s3://a-test-bucket-for-nextflow/a-folder/"
+    #outdir : "/home/kevin/Documents/tests/annotatevcf_full_test/"
+
+
+    # Boilerplate options
+    #outdir                     : '/home/administrator/results'
+    outdir                     : "/home/bianca/testresultsvcf"
+    #outdir                     : 's3://a-test-bucket-for-nextflow/a-folder/'
+  
